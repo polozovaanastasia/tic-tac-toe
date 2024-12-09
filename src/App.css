@@ -1,0 +1,79 @@
+html,
+body,
+#root,
+.app,
+.game {
+    width: 100%;
+    height: 100%;
+}
+
+.app,
+.game-cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game {
+    width: 400px;
+    height: 400px;
+    /* background-color: antiquewhite; */
+}
+
+.game-info {
+    /* margin-bottom: 10px; */
+    text-align: center;
+}
+
+.game-step {
+    padding: 18px 10px;
+}
+
+.game-result {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #84c38f;
+    color: #fff;
+}
+
+.game-restart {
+    padding: 10px;
+    border: 1px solid #0a9822;
+    background-color: #0a9822;
+    color: #fff;
+    cursor: pointer;
+}
+
+.game-fild {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+}
+
+.game-cell {
+    flex: 0 0 33.333%;
+    height: 130px;
+    font-size: 35px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.game_disabled .game-cell {
+    cursor: default;
+}
+
+.game-cell_winner {
+    background-color: #84c38f;
+}
+
+.symbol-o {
+    color: #0a9822;
+}
+
+.symbol-x {
+    color: #a31b1b;
+}
