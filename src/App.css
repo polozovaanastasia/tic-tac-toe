@@ -8,7 +8,8 @@ body,
 }
 
 .app,
-.game-cell {
+.game-cell,
+.game-step {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -23,25 +24,51 @@ body,
     text-align: center;
 }
 
-.game-step {
-    padding: 18px 10px;
+.game-step,
+.game-result {
+    padding: 10px;
 }
 
 .game-result {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
-    background-color: #84c38f;
     color: #fff;
+}
+
+.game-result-winner_O {
+    background-color: #84c38f;
+}
+
+.game-result-winner_X {
+    background-color: #bf8484;
+}
+
+.game-result span {
+    display: flex;
+    align-items: center;
+}
+
+.game-result .symbol,
+.game-step .symbol {
+    margin-left: 5px;
 }
 
 .game-restart {
     padding: 10px;
-    border: 1px solid #0a9822;
-    background-color: #0a9822;
+    border: 1px solid;
     color: #fff;
     cursor: pointer;
+}
+
+.game-result-winner_O .game-restart {
+    border-color: #0a9822;
+    background-color: #0a9822;
+}
+
+.game-result-winner_X .game-restart {
+    border-color: #a31b1b;
+    background-color: #a31b1b;
 }
 
 .game-fild {
@@ -54,7 +81,6 @@ body,
 .game-cell {
     flex: 0 0 33.333%;
     height: 130px;
-    font-size: 35px;
     border: 1px solid #ccc;
     box-sizing: border-box;
     cursor: pointer;
@@ -64,8 +90,16 @@ body,
     cursor: default;
 }
 
-.game-cell_winner {
+.game-cell_O {
     background-color: #84c38f;
+}
+
+.game-cell_X {
+    background-color: #bf8484;
+}
+
+.symbol {
+    font-size: 35px;
 }
 
 .symbol-o {

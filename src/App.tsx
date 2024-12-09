@@ -22,7 +22,7 @@ function App() {
     };
 
     const renderSymbol = (symbol) => (
-        <span className={getSymbolClassName(symbol)}>{symbol}</span>
+        <span className={`symbol ${getSymbolClassName(symbol)}`}>{symbol}</span>
     );
 
     const computeWinner = (cells) => {
@@ -55,9 +55,17 @@ function App() {
             <div className="game">
                 <div className="game-info">
                     {winnerSequence || isDraw ? (
-                        <div className="game-result">
+                        <div
+                            className={`game-result ${
+                                winnerSequence
+                                    ? `game-result-winner_${currentStep}`
+                                    : ""
+                            }`}
+                        >
                             {winnerSequence ? (
-                                <span>Победитель: {currentStep}</span>
+                                <span>
+                                    Победитель: {renderSymbol(currentStep)}
+                                </span>
                             ) : (
                                 <span>О, это ничья. Сыграем еще раз?</span>
                             )}
@@ -105,7 +113,9 @@ function App() {
                             <span
                                 key={index}
                                 className={`game-cell ${
-                                    isWinner ? "game-cell_winner" : ""
+                                    isWinner
+                                        ? `game-cell_winner game-cell_${currentStep}`
+                                        : ""
                                 }`}
                                 onClick={onClickHandler}
                             >
