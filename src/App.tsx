@@ -43,6 +43,8 @@ function App() {
         }
     };
 
+    const isDraw = cells.every((cell) => cell != null);
+
     const restartGame = () => {
         setCells(Array(9).fill(null));
         setCurrentStep(SYMBOL_O);
@@ -52,9 +54,13 @@ function App() {
         <div className="app">
             <div className="game">
                 <div className="game-info">
-                    {winnerSequence ? (
+                    {winnerSequence || isDraw ? (
                         <div className="game-result">
-                            <span>Победитель: {currentStep}</span>
+                            {winnerSequence ? (
+                                <span>Победитель: {currentStep}</span>
+                            ) : (
+                                <span>О, это ничья. Сыграем еще раз?</span>
+                            )}
                             <button
                                 className="game-restart"
                                 onClick={restartGame}
@@ -92,13 +98,14 @@ function App() {
                                 );
                             }
                         };
+
+                        const isWinner = winnerSequence?.includes(index);
+
                         return (
                             <span
+                                key={index}
                                 className={`game-cell ${
-                                    winnerSequence &&
-                                    winnerSequence.includes(index)
-                                        ? "game-cell_winner"
-                                        : ""
+                                    isWinner ? "game-cell_winner" : ""
                                 }`}
                                 onClick={onClickHandler}
                             >

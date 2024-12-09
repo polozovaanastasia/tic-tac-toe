@@ -17,11 +17,9 @@ body,
 .game {
     width: 400px;
     height: 400px;
-    /* background-color: antiquewhite; */
 }
 
 .game-info {
-    /* margin-bottom: 10px; */
     text-align: center;
 }
 
