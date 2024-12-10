@@ -43,7 +43,7 @@ function App() {
         }
     };
 
-    const isDraw = cells.every((cell) => cell != null);
+    const isDraw = cells.every((cell) => cell);
 
     const restartGame = () => {
         setCells(Array(9).fill(null));
@@ -84,7 +84,9 @@ function App() {
                 </div>
                 <div
                     className={`game-fild ${
-                        winnerSequence ? "game_disabled" : "game_started"
+                        winnerSequence || isDraw
+                            ? "game_disabled"
+                            : "game_started"
                     }`}
                 >
                     {cells.map((cell, index) => {
