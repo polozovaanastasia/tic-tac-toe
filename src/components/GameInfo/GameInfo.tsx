@@ -1,4 +1,4 @@
-import { SymbolType } from "../../App";
+import { SymbolType } from "../../types/index";
 import GameSymbol from "../GameSymbol/GameSymbol";
 
 type GameInfoPropsType = {

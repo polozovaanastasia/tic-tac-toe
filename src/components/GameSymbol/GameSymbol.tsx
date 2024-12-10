@@ -1,4 +1,4 @@
-import { CellType, SYMBOL_O, SYMBOL_X } from "../../App";
+import { CellType, SYMBOL_O, SYMBOL_X } from "../../types/index";
 
 type GameSymbolPropsType = {
     symbol: CellType;
